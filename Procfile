@@ -1,0 +1,1 @@
+web: liquidsoap app.liq
