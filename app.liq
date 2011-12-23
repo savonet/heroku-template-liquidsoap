@@ -27,7 +27,9 @@ harbor.http.register(port=port,"/hello", hello)
 # Grab radiopi's reggae channel
 s = input.http("http://radiopi.org:8080/reggae")
 
+# Make it infallible
+s = mksafe(s)
+
 # Output it at mountpoint "/test" in mp3 format.
-output.harbor(%mp3, port=port, mount="test",
-              fallible=true, s)
+output.harbor(%mp3, port=port, mount="test", s)
 
